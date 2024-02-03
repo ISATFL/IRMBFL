@@ -1,4 +1,4 @@
-#IRMBFL
+# IRMBFL
 
 1. Configure the BugLocator tool to output a list of suspicious files using bug reports and code files as inputs.
 ```BugLocator
