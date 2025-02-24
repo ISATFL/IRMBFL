@@ -1,6 +1,5 @@
 package SBFL;
 
-import com.sun.deploy.util.StringUtils;
 import entity.Bug;
 
 import java.io.BufferedReader;
@@ -17,7 +16,7 @@ import java.util.Arrays;
 public class SBuggyLines {
     public ArrayList<Bug> getTrueBug(String fileName) throws IOException {
         ArrayList<Bug> bugArrayList=new ArrayList<>();
-        String path="D:\\SoftWare\\BugLocator\\buggy-lines\\"+fileName+".buggy.lines";
+        String path="E:\\SoftWare\\BugLocator\\buggy-lines\\"+fileName+".buggy.lines";
         BufferedReader br =new BufferedReader(new FileReader(path));
         String line=null;
         while((line=br.readLine())!=null){
@@ -25,7 +24,7 @@ public class SBuggyLines {
             String arr[]=args[0].split("\\.");
             String prePath=arr[0];
             String pathArr[]=prePath.split("/");
-            String finalPath= StringUtils.join(Arrays.asList(pathArr),".");
+            String finalPath= String.join(".", pathArr);
             Bug bug=new Bug();
             bug.setBugPath(finalPath);
             bug.setBugRow(Integer.parseInt(args[1]));

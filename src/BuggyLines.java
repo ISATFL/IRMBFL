@@ -1,4 +1,4 @@
-import com.sun.deploy.util.StringUtils;
+import java.util.List;
 import entity.Bug;
 
 import java.io.BufferedReader;
@@ -24,7 +24,7 @@ public class BuggyLines {
             String arr[]=args[0].split("\\.");
             String prePath=arr[0];
             String pathArr[]=prePath.split("/");
-            String finalPath= StringUtils.join(Arrays.asList(pathArr),".");
+            String finalPath = String.join(".", pathArr);
             Bug bug=new Bug();
             bug.setBugPath(finalPath);
             bug.setBugRow(Integer.parseInt(args[1]));

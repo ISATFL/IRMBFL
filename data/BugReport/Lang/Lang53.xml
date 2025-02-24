@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<bugrepository name="Lang53">
+ <bug id="346" opendate="2004-10-06 17:02:00" fixdate="2004-10-18 17:40:00">
+    <buginformation>
+      <summary>Dates.round() behaves incorrectly for minutes and seconds</summary>
+      <description>
+      Get unexpected output for rounding by minutes or seconds.
+      public void testRound()
+{
+Calendar testCalendar = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
+testCalendar.set(2007, 6, 2, 8, 9, 50);
+Date date = testCalendar.getTime();
+System.out.println("Before round() " + date);
+System.out.println("After round() " + DateUtils.round(date, Calendar.MINUTE));
+}
+      --2.1 produces
+Before round() Mon Jul 02 03:09:50 CDT 2007
+After round() Mon Jul 02 03:10:00 CDT 2007 ¨C this is what I would expect
+      --2.2 and 2.3 produces
+Before round() Mon Jul 02 03:09:50 CDT 2007
+After round() Mon Jul 02 03:01:00 CDT 2007 ¨C this appears to be wrong
+
+      </description>
+    </buginformation>
+    <fixedFiles>
+      <file>org.apache.commons.lang.ArrayUtils.java</file>
+      <file>org.apache.commons.lang.BitField.java</file>
+      <file>org.apache.commons.lang.BooleanUtils.java</file>
+      <file>org.apache.commons.lang.builder.CompareToBuilder.java</file>
+      <file>org.apache.commons.lang.builder.EqualsBuilder.java</file>
+      <file>org.apache.commons.lang.builder.HashCodeBuilder.java</file>
+      <file>org.apache.commons.lang.builder.ReflectionToStringBuilder.java</file>
+      <file>org.apache.commons.lang.builder.StandardToStringStyle.java</file>
+      <file>org.apache.commons.lang.builder.ToStringBuilder.java</file>
+      <file>org.apache.commons.lang.builder.ToStringStyle.java</file>
+      <file>org.apache.commons.lang.CharEncoding.java</file>
+      <file>org.apache.commons.lang.CharRange.java</file>
+      <file>org.apache.commons.lang.CharSet.java</file>
+      <file>org.apache.commons.lang.CharSetUtils.java</file>
+      <file>org.apache.commons.lang.CharUtils.java</file>
+      <file>org.apache.commons.lang.ClassUtils.java</file>
+      <file>org.apache.commons.lang.Entities.java</file>
+      <file>org.apache.commons.lang.enum.Enum.java</file>
+      <file>org.apache.commons.lang.enum.EnumUtils.java</file>
+      <file>org.apache.commons.lang.enum.ValuedEnum.java</file>
+      <file>org.apache.commons.lang.enums.Enum.java</file>
+      <file>org.apache.commons.lang.enums.EnumUtils.java</file>
+      <file>org.apache.commons.lang.enums.ValuedEnum.java</file>
+      <file>org.apache.commons.lang.exception.ExceptionUtils.java</file>
+      <file>org.apache.commons.lang.exception.Nestable.java</file>
+      <file>org.apache.commons.lang.exception.NestableDelegate.java</file>
+      <file>org.apache.commons.lang.exception.NestableError.java</file>
+      <file>org.apache.commons.lang.exception.NestableException.java</file>
+      <file>org.apache.commons.lang.exception.NestableRuntimeException.java</file>
+      <file>org.apache.commons.lang.IllegalClassException.java</file>
+      <file>org.apache.commons.lang.IncompleteArgumentException.java</file>
+      <file>org.apache.commons.lang.IntHashMap.java</file>
+      <file>org.apache.commons.lang.LocaleUtils.java</file>
+      <file>org.apache.commons.lang.math.DoubleRange.java</file>
+      <file>org.apache.commons.lang.math.FloatRange.java</file>
+      <file>org.apache.commons.lang.math.Fraction.java</file>
+      <file>org.apache.commons.lang.math.IntRange.java</file>
+      <file>org.apache.commons.lang.math.JVMRandom.java</file>
+      <file>org.apache.commons.lang.math.LongRange.java</file>
+      <file>org.apache.commons.lang.math.NumberRange.java</file>
+      <file>org.apache.commons.lang.math.NumberUtils.java</file>
+      <file>org.apache.commons.lang.math.RandomUtils.java</file>
+      <file>org.apache.commons.lang.math.Range.java</file>
+      <file>org.apache.commons.lang.mutable.Mutable.java</file>
+      <file>org.apache.commons.lang.mutable.MutableBoolean.java</file>
+      <file>org.apache.commons.lang.mutable.MutableByte.java</file>
+      <file>org.apache.commons.lang.mutable.MutableDouble.java</file>
+      <file>org.apache.commons.lang.mutable.MutableFloat.java</file>
+      <file>org.apache.commons.lang.mutable.MutableInt.java</file>
+      <file>org.apache.commons.lang.mutable.MutableLong.java</file>
+      <file>org.apache.commons.lang.mutable.MutableObject.java</file>
+      <file>org.apache.commons.lang.mutable.MutableShort.java</file>
+      <file>org.apache.commons.lang.NotImplementedException.java</file>
+      <file>org.apache.commons.lang.NullArgumentException.java</file>
+      <file>org.apache.commons.lang.NumberRange.java</file>
+      <file>org.apache.commons.lang.NumberUtils.java</file>
+      <file>org.apache.commons.lang.ObjectUtils.java</file>
+      <file>org.apache.commons.lang.RandomStringUtils.java</file>
+      <file>org.apache.commons.lang.SerializationException.java</file>
+      <file>org.apache.commons.lang.SerializationUtils.java</file>
+      <file>org.apache.commons.lang.StringEscapeUtils.java</file>
+      <file>org.apache.commons.lang.StringUtils.java</file>
+      <file>org.apache.commons.lang.SystemUtils.java</file>
+      <file>org.apache.commons.lang.text.CompositeFormat.java</file>
+      <file>org.apache.commons.lang.text.StrBuilder.java</file>
+      <file>org.apache.commons.lang.text.StrLookup.java</file>
+      <file>org.apache.commons.lang.text.StrMatcher.java</file>
+      <file>org.apache.commons.lang.text.StrSubstitutor.java</file>
+      <file>org.apache.commons.lang.text.StrTokenizer.java</file>
+      <file>org.apache.commons.lang.time.DateFormatUtils.java</file>
+      <file>org.apache.commons.lang.time.DateUtils.java</file>
+      <file>org.apache.commons.lang.time.DurationFormatUtils.java</file>
+      <file>org.apache.commons.lang.time.FastDateFormat.java</file>
+      <file>org.apache.commons.lang.time.StopWatch.java</file>
+      <file>org.apache.commons.lang.UnhandledException.java</file>
+      <file>org.apache.commons.lang.Validate.java</file>
+      <file>org.apache.commons.lang.WordUtils.java</file>
+    </fixedFiles>
+  </bug>
+</bugrepository>
