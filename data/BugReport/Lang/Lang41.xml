@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<bugrepository name="Lang41">
+ <bug id="535" opendate="2004-10-06 17:02:00" fixdate="2004-10-18 17:40:00">
+    <buginformation>
+      <summary>ClassUtils.getShortClassName() will not work with an array; it seems to add a semicolon to the end.</summary>
+      <description>
+      A semicolon is introduced into the class name at the end for all arrays...
+      String sArray[] = new String[2];
+sArray[0] = "mark";
+sArray[1] = "is cool";
+String simpleString = "chris";
+      assertEquals("String", ClassUtils.getShortClassName(simpleString, null));
+assertEquals("String;", ClassUtils.getShortClassName(sArray, null));
+
+      </description>
+    </buginformation>
+    <fixedFiles>
+      <file>org.apache.commons.lang.ArrayUtils.java</file>
+      <file>org.apache.commons.lang.BitField.java</file>
+      <file>org.apache.commons.lang.BooleanUtils.java</file>
+      <file>org.apache.commons.lang.builder.CompareToBuilder.java</file>
+      <file>org.apache.commons.lang.builder.EqualsBuilder.java</file>
+      <file>org.apache.commons.lang.builder.HashCodeBuilder.java</file>
+      <file>org.apache.commons.lang.builder.IDKey.java</file>
+      <file>org.apache.commons.lang.builder.ReflectionToStringBuilder.java</file>
+      <file>org.apache.commons.lang.builder.StandardToStringStyle.java</file>
+      <file>org.apache.commons.lang.builder.ToStringBuilder.java</file>
+      <file>org.apache.commons.lang.builder.ToStringStyle.java</file>
+      <file>org.apache.commons.lang.CharEncoding.java</file>
+      <file>org.apache.commons.lang.CharRange.java</file>
+      <file>org.apache.commons.lang.CharSet.java</file>
+      <file>org.apache.commons.lang.CharSetUtils.java</file>
+      <file>org.apache.commons.lang.CharUtils.java</file>
+      <file>org.apache.commons.lang.ClassUtils.java</file>
+      <file>org.apache.commons.lang.concurrent.ConcurrentException.java</file>
+      <file>org.apache.commons.lang.concurrent.ConcurrentUtils.java</file>
+      <file>org.apache.commons.lang.concurrent.LazyInitializer.java</file>
+      <file>org.apache.commons.lang.EnumUtils.java</file>
+      <file>org.apache.commons.lang.exception.ContextedException.java</file>
+      <file>org.apache.commons.lang.exception.ContextedRuntimeException.java</file>
+      <file>org.apache.commons.lang.exception.DefaultExceptionContext.java</file>
+      <file>org.apache.commons.lang.exception.ExceptionContext.java</file>
+      <file>org.apache.commons.lang.exception.ExceptionUtils.java</file>
+      <file>org.apache.commons.lang.LocaleUtils.java</file>
+      <file>org.apache.commons.lang.math.DoubleRange.java</file>
+      <file>org.apache.commons.lang.math.FloatRange.java</file>
+      <file>org.apache.commons.lang.math.Fraction.java</file>
+      <file>org.apache.commons.lang.math.IEEE754rUtils.java</file>
+      <file>org.apache.commons.lang.math.IntRange.java</file>
+      <file>org.apache.commons.lang.math.LongRange.java</file>
+      <file>org.apache.commons.lang.math.NumberRange.java</file>
+      <file>org.apache.commons.lang.math.NumberUtils.java</file>
+      <file>org.apache.commons.lang.math.Range.java</file>
+      <file>org.apache.commons.lang.mutable.Mutable.java</file>
+      <file>org.apache.commons.lang.mutable.MutableBoolean.java</file>
+      <file>org.apache.commons.lang.mutable.MutableByte.java</file>
+      <file>org.apache.commons.lang.mutable.MutableDouble.java</file>
+      <file>org.apache.commons.lang.mutable.MutableFloat.java</file>
+      <file>org.apache.commons.lang.mutable.MutableInt.java</file>
+      <file>org.apache.commons.lang.mutable.MutableLong.java</file>
+      <file>org.apache.commons.lang.mutable.MutableObject.java</file>
+      <file>org.apache.commons.lang.mutable.MutableShort.java</file>
+      <file>org.apache.commons.lang.ObjectUtils.java</file>
+      <file>org.apache.commons.lang.RandomStringUtils.java</file>
+      <file>org.apache.commons.lang.reflect.ConstructorUtils.java</file>
+      <file>org.apache.commons.lang.reflect.FieldUtils.java</file>
+      <file>org.apache.commons.lang.reflect.MemberUtils.java</file>
+      <file>org.apache.commons.lang.reflect.MethodUtils.java</file>
+      <file>org.apache.commons.lang.SerializationException.java</file>
+      <file>org.apache.commons.lang.SerializationUtils.java</file>
+      <file>org.apache.commons.lang.StringEscapeUtils.java</file>
+      <file>org.apache.commons.lang.StringUtils.java</file>
+      <file>org.apache.commons.lang.SystemUtils.java</file>
+      <file>org.apache.commons.lang.text.CompositeFormat.java</file>
+      <file>org.apache.commons.lang.text.ExtendedMessageFormat.java</file>
+      <file>org.apache.commons.lang.text.FormatFactory.java</file>
+      <file>org.apache.commons.lang.text.StrBuilder.java</file>
+      <file>org.apache.commons.lang.text.StrLookup.java</file>
+      <file>org.apache.commons.lang.text.StrMatcher.java</file>
+      <file>org.apache.commons.lang.text.StrSubstitutor.java</file>
+      <file>org.apache.commons.lang.text.StrTokenizer.java</file>
+      <file>org.apache.commons.lang.text.translate.AggregateTranslator.java</file>
+      <file>org.apache.commons.lang.text.translate.CharSequenceTranslator.java</file>
+      <file>org.apache.commons.lang.text.translate.CodePointTranslator.java</file>
+      <file>org.apache.commons.lang.text.translate.EntityArrays.java</file>
+      <file>org.apache.commons.lang.text.translate.EscapeUtils.java</file>
+      <file>org.apache.commons.lang.text.translate.LookupTranslator.java</file>
+      <file>org.apache.commons.lang.text.translate.NumericEntityEscaper.java</file>
+      <file>org.apache.commons.lang.text.translate.NumericEntityUnescaper.java</file>
+      <file>org.apache.commons.lang.text.translate.UnescapeUtils.java</file>
+      <file>org.apache.commons.lang.text.translate.UnicodeEscaper.java</file>
+      <file>org.apache.commons.lang.text.translate.UnicodeUnescaper.java</file>
+      <file>org.apache.commons.lang.time.DateFormatUtils.java</file>
+      <file>org.apache.commons.lang.time.DateUtils.java</file>
+      <file>org.apache.commons.lang.time.DurationFormatUtils.java</file>
+      <file>org.apache.commons.lang.time.FastDateFormat.java</file>
+      <file>org.apache.commons.lang.time.StopWatch.java</file>
+      <file>org.apache.commons.lang.Validate.java</file>
+      <file>org.apache.commons.lang.WordUtils.java</file>
+    </fixedFiles>
+  </bug>
+</bugrepository>
