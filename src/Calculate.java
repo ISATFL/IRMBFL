@@ -1,4 +1,4 @@
-import com.sun.deploy.util.StringUtils;
+
 import entity.Bug;
 
 import java.io.*;
@@ -79,7 +79,7 @@ public class Calculate {
     }
     public static int getMethodNum(int number,String fileName) throws IOException {
         String arr[]=fileName.split("\\.");
-        String name= StringUtils.join(Arrays.asList(arr),"\\");
+        String name= String.join("\\", arr);
         String path1="E:\\Defect4j(code)\\Mockito\\mockito-"+number+"\\src\\"+name+".java";
         String path2="E:\\Defect4j(code)\\Mockito\\mockito-"+number+"\\src\\"+name+".java";
         File file1 =new File("E:\\Defect4j(code)\\Mockito\\mockito-"+number+"\\src\\"+name+".java");
